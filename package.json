@@ -1,0 +1,18 @@
+{
+  "name": "sharing-code-with-functions",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "emu": "firebase emulators:start --only functions",
+    "deploy:functions": "firebase deploy --only functions"
+  },
+  "devDependencies": {
+    "firebase-tools": "^11.29.0",
+    "turbo": "latest"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "functions": [
+    {
+      "source": "apps/functions/dist",
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\"/.. run build"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "type": "module",
+  "exports": {
+    "./types": "./types/index.ts",
+    "./utils": "./utils/index.ts"
+  },
+  "license": "ISC"
+}
