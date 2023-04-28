@@ -59,7 +59,8 @@ export default defineConfig({
                 copy({
                     targets: [
                         { src: '.env*', dest: 'dist' }
-                    ]
+                    ],
+                    hook: "closeBundle" // we must specify the closeBundle hook so that the files don't get overwritten... that may be a bug with plugin, however, with this setting it works
                 })
             ]
         }
