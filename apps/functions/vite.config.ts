@@ -1,6 +1,7 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import generatePackageJson from "rollup-plugin-generate-package-json";
+import copy from 'rollup-plugin-copy'
 import { dependencies, version, name, engines } from "./package.json";
 
 /** 
@@ -53,6 +54,12 @@ export default defineConfig({
                 generatePackageJson({
                     baseContents: basePackage,
                     additionalDependencies: externalDepsObj
+                }),
+                /* If you use environment variables in the cloud functions, you will want to copy them into dist */
+                copy({
+                    targets: [
+                        { src: '.env*', dest: 'dist' }
+                    ]
                 })
             ]
         }
